@@ -1,0 +1,6 @@
+#!/bin/bash
+# install in .git/hooks/
+AUTOPREFIX_DIR=/home/greg/gulp-scss-autoprefix
+git diff --cached --name-status | grep -q '\.scss' && 
+  BASEDIR=$(pwd) $AUTOPREFIX_DIR/node_modules/.bin/gulp --cwd $AUTOPREFIX_DIR
+
